@@ -56,7 +56,7 @@
             this.isRead = isRead;
         };
         loopLibrary(myLibrary);
-        
+
         submit.addEventListener('click', (event) => {
             title = titleButton.value;
             author = authorButton.value;
@@ -67,7 +67,7 @@
             authorButton.value = '';
             pagesButton.value = '';
             isRead.value = '';
-            loopLibrary(myLibrary);
+            createCard(myLibrary);
          });
 
          function addBookToLibrary(title,author,pages,isRead) {
@@ -82,9 +82,17 @@
                 element.id = "bookCard" + i;
                 element.textContent = array[i].title;
                 container.appendChild(element);
-                console.log(array[i].title)
+                console.log(array[i].title);
                 
             }
+        }
+
+        function createCard(array) {
+            let element = document.createElement('div');
+                element.className = "bookCard";
+                element.id = "bookCard" + (array.length-1);
+                element.textContent = array[array.length-1].title;
+                container.appendChild(element);
         }
         
         /*for (let i = 0; i <= 10; i++) {
