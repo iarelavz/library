@@ -20,8 +20,8 @@ let myLibrary = [];
             pages = pagesButton.value;
             isRead = readButton.value;
             addBookToLibrary(title,author,pages,isRead);
-            loopLibrary(myLibrary)
          })
+         console.log(myLibrary)
         function addBookToLibrary(title,author,pages,isRead) {
             
             let newBook = new Book(title,author,pages,isRead);
